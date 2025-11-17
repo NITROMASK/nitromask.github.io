@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="favicon.png">
+    <title>NSv2 Info</title>
+    <link rel="stylesheet" href="info.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="section">
+            <button class="collapser">Troubleshooting</button>
+            <div class="content">
+                <ul class="trouble-list">
+                    <li><strong>Retry:</strong> Keep Reloading If the site keeps crashing.</li>
+                    <li><strong>Reboot crash:</strong> If “userspace reboot” just crashes and reboots your device hit stay and respring manually</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <button class="collapser">Credits</button>
+            <div class="content">
+                <p class="dash">- <strong>wh1te4ever</strong> (main developer)</p>
+                <p class="dash">- <strong>alfiecg24</strong> (stable kernel exploit)</p>
+                <p class="dash">- <strong>felix-pb</strong> (kernel exploit)</p>
+                <p class="dash">- <strong>Samuel Groß</strong> (WebKit exploit CVE-2020-9802)</p>
+                <p class="dash">- <strong>Maskie</strong> (Website)</p>
+                <p class="dash">- <strong>CoolStar</strong> + Chimera jailbreak devs</p>
+                <p class="dash">- <strong>JakeBlair420</strong> + TNSW devs (JOP chain, code exec idea)</p>
+                <p class="dash">- <strong>qwertyoruiop</strong> (Mach-O loader + jitMemCpy)</p>
+                <p class="someshit"> <strong>If I missed anyone, Contact Me on Github. <strong></p>
+            </div>
+        </div>
+
+        <a href="index.html" class="back">Back</a>
+    </div>
+
+    <script>
+        document.querySelectorAll('.collapser').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.classList.toggle('active');
+                const content = btn.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

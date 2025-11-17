@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>totally-not-spyware v2</title>
+	<link rel="icon" type="image/png" href="favicon.png">
+    <title>NSv2</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -15,39 +16,30 @@
 
     <script>
         function log(msg) {}
+
         function rejb() {
-            document.getElementById("jbButton").textContent = "re-jailbreaking";
+            const btn = document.getElementById("jbButton");
+            btn.textContent = "re-jailbreaking";
+            btn.classList.add("clicked");
             setTimeout(() => {
               pwn();
             }, 100);
         }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById("jbButton");
+            const supported = /iPhone|iPad|iPod/.test(navigator.userAgent) && /OS 12_/.test(navigator.userAgent);
+
+            if (!supported) {
+                btn.textContent = "Unsupported";
+                btn.disabled = true;
+                btn.classList.add('disabled');
+            }
+        });
     </script>
 </head>
-
 <body>
-
-    <h3>totally-not-spyware v2 <span style="color:#555;">(commit-99baa0b)</span></h3>
-    <p class="subtitle">rejailbreak utility</p>
-
     <button id="jbButton" onclick="rejb();">re-jailbreak</button>
-
-    <div class="info">
-        <p>Works on iOS 12.0-12.5.x, A7-A10 devices with Chimera jailbroken devices.</p>
-        <p>May take up to 20-30 seconds to build JOP chain and re-jailbreak.</p>
-        <p><a href="https://github.com/wh1te4ever/totally-not-spyware-v2" target="_blank">View source on GitHub</a></p>
-    </div>
-
-    <div class="credits">
-        <b>Credits</b><br>
-        - wh1te4ever (main developer)<br>
-        - alfiecg24 (stable kernel exploit)<br>
-        - felix-pb (kernel exploit)<br>
-        - Samuel Groß (WebKit exploit CVE-2020-9802)<br>
-        - CoolStar + Chimera jailbreak devs<br>
-        - JakeBlair420 + TNSW devs (JOP chain, code exec idea)<br>
-        - qwertyoruiop (Mach-O loader + jitMemCpy)<br>
-        - If I missed anyone, let me know.<br>
-    </div>
-
+    <a href="info.html" class="info-link">Info</a>
 </body>
 </html>

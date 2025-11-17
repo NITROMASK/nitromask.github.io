@@ -1,0 +1,126 @@
+body {
+    background: #000;
+    color: #fff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.collapser {
+    display: block;
+    width: 90%;
+    max-width: 600px;
+    background: #000;
+    color: #fff;
+    padding: 18px;
+    font-size: 1.2rem;
+    text-align: left;
+    border: 3px solid #fff;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+    margin: 10px auto;
+    position: relative;
+}
+
+.collapser::after {
+    content: '\25BC';
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s;
+}
+
+.collapser.active::after {
+    transform: rotate(-180deg);
+}
+
+.collapser:hover {
+    box-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s;
+    background: #0a0a0a;
+    border-left: 3px solid #444;
+    padding: 0 20px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.content p.dash {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.trouble-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.trouble-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+    line-height: 1.5;
+}
+
+.trouble-list li:last-child {
+    border-bottom: none;
+}
+
+.trouble-list strong {
+    color: #fff;
+}
+
+.back {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    position: center;
+    bottom: 20px;
+    transition: text-shadow 0.3s;
+}
+
+.back:hover, .back:active {
+    text-shadow: 0 0 16px rgba(255,255,255,0.9),
+                 0 0 24px rgba(255,255,255,0.6);
+}
+
+@media (min-width: 769px) {
+    .collapser {
+        width: 600px;
+        font-size: 1.3rem;
+        padding: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .collapser {
+        width: 95%;
+        font-size: 1rem;
+        padding: 16px;
+    }
+}
+
+.someshit {
+    text-align: center;
+    padding-left: 0;
+}

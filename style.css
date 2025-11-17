@@ -1,71 +1,54 @@
 body {
-    background-color: #0d0d0d;
-    color: #d4d4d4;
+    background: #000;
+    color: #fff;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 40px;
-    text-align: center;
-}
-
-h3 {
-    font-size: 2.2rem;
-    color: #61dafb;
-    margin-bottom: 8px;
-}
-
-p.subtitle {
-    font-size: 1.1rem;
-    color: #8a8a8a;
-    margin-top: 0;
-    margin-bottom: 30px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #jbButton {
-    padding: 14px 28px;
-    font-size: 1.1rem;
+    padding: 22px 48px;
+    font-size: 1.4rem;
     font-weight: bold;
-    color: #ffffff;
-    background-color: #21a0f6;
-    border: none;
-    border-radius: 4px;
+    color: #fff;
+    background-color: #000;
+    border: 3px solid #fff;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.4s, transform 0.2s;
     margin-bottom: 32px;
 }
-#jbButton:hover {
-    background-color: #1a84d3;
-}
-#jbButton:active {
-    transform: scale(0.98);
+
+#jbButton.clicked {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 25px 8px rgba(255,255,255,0.7),
+                0 0 45px 20px rgba(255,255,255,0.35);
+    border-radius: 18px;
+    transform: scale(1.05);
 }
 
-a {
-    color: #61dafb;
+#jbButton.disabled {
+    background-color: #000;
+    color: #777;
+    border-color: #777;
+    cursor: not-allowed;
+}
+
+.info-link {
+    color: #fff;
     text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-.info, .credits {
-    max-width: 700px;
-    margin: 0 auto 20px auto;
-    text-align: left;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 20px;
+    transition: text-shadow 0.3s;
 }
 
-.info {
-    font-size: 0.95rem;
-    color: #b0b0b0;
-}
-
-.credits {
-    padding: 20px;
-    background-color: #1a1a1a;
-    border-left: 5px solid #21a0f6;
-    font-size: 0.9rem;
-    color: #cccccc;
-}
-
-.credits b {
-    color: #ffffff;
+.info-link:hover, .info-link:active {
+    text-shadow: 0 0 16px rgba(255,255,255,0.9),
+                 0 0 24px rgba(255,255,255,0.6);
 }
