@@ -1,18 +1,22 @@
-body {
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     background: #000;
     color: #fff;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+
 #jbButton {
-    padding: 22px 48px;
-    font-size: 1.4rem;
+    padding: 18px 36px;        
+    font-size: 1.2rem;
     font-weight: bold;
     color: #fff;
     background-color: #000;
@@ -20,14 +24,15 @@ body {
     border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, box-shadow 0.4s, transform 0.2s;
+    max-width: 90vw;           
     margin-bottom: 32px;
 }
 
 #jbButton.clicked {
     background-color: #fff;
     color: #000;
-    box-shadow: 0 0 25px 8px rgba(255,255,255,0.7),
-                0 0 45px 20px rgba(255,255,255,0.35);
+    box-shadow: 0 0 18px 6px rgba(255,255,255,0.7),
+                0 0 30px 12px rgba(255,255,255,0.35);
     border-radius: 18px;
     transform: scale(1.05);
 }
@@ -45,6 +50,8 @@ body {
     font-size: 1rem;
     position: absolute;
     bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     transition: text-shadow 0.3s;
 }
 
