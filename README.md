@@ -1,4 +1,4 @@
-# NotSpyware v2
+# NotSpyware v2 Minimalistic
 
 **Notspyware v2 Is Availible at https://nsv2.xyz/**
 
